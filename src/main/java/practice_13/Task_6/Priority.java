@@ -1,4 +1,4 @@
-package practice_13_1.Task_6_1;
+package practice_13.Task_6;
 
 public enum Priority {
     LOW,

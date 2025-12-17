@@ -1,9 +1,9 @@
-package practice_13_1.Task_5;
+package practice_13.Task_5;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class InventoryService {
     private final Map<String, List<Product>> warehouse = new ConcurrentHashMap<>();
@@ -14,12 +14,12 @@ public class InventoryService {
         this.isInventoryOpen = open;
     }
 
-    public synchronized void addProduct(Product product) {
+    public void addProduct(Product product) {
         if (!isInventoryOpen) {
-            throw new RuntimeException("Склад закрыт!");
+            throw new ClosedWarehousException("Склад закрыт!");
         }
 
-        warehouse.computeIfAbsent(product.category, r -> new ArrayList<>()).add(product);
+        warehouse.computeIfAbsent(product.getCategory(), r -> new CopyOnWriteArrayList<>()).add(product);
     }
 
     public Product getProductByCategory(String category) {
@@ -28,7 +28,7 @@ public class InventoryService {
             throw new OutOfStockException("Товар закончился на складе!");
         }
 
-        return productList.removeFirst();
+        return productList.remove(0);
     }
 
     public List<Product> filterByCategory(String category) {
@@ -46,6 +46,6 @@ public class InventoryService {
     }
 
     public Map<String, List<Product>> getAll() {
-        return warehouse;
+        return Map.copyOf(warehouse);
     }
 }

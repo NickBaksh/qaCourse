@@ -1,4 +1,4 @@
-package practice_13_1.Task_3;
+package practice_13.Task_3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +23,12 @@ public class GradeService<T extends Number> {
                 gradesSum += g.getGrade().doubleValue();
                 count++;
             }
-
-            if (count == 0) {
-                throw new InvalidGradeException("Отсутствуют оценки по предмету");
-            }
         }
+
+        if (count == 0) {
+            throw new InvalidGradeException("Отсутствуют оценки по предмету");
+        }
+
         return gradesSum / count;
     }
 

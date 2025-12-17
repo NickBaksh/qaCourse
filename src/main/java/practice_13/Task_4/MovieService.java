@@ -1,15 +1,15 @@
-package practice_13_1.Task_4_1;
+package practice_13.Task_4;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MovieService {
     private Map<Movie, List<Rating<?>>> movieRatings = new ConcurrentHashMap<>();
 
-    public synchronized void addRating(Movie movie, Rating<?> rating) {
-        movieRatings.computeIfAbsent(movie, k -> new ArrayList<>()).add(rating);
+    public void addRating(Movie movie, Rating<?> rating) {
+        movieRatings.computeIfAbsent(movie, k -> new CopyOnWriteArrayList<>()).add(rating);
     }
 
     public double calculateAverageRating(Movie movie) {

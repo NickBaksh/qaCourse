@@ -1,4 +1,4 @@
-package practice_13_1.task_2;
+package practice_13.task_2;
 
 public class UserValidator {
     private static boolean validationEnabled = true;
@@ -22,6 +22,9 @@ public class UserValidator {
     }
 
     private static void validateName(String name) {
+        if (name == null) {
+            throw new InvalidUserException("Имя не может быть пустым");
+        }
 
         if (name.isBlank() || !Character.isUpperCase(name.charAt(0))) {
             throw new InvalidUserException("Имя должно быть не пустым и должно начинаться с заглавной буквы.");

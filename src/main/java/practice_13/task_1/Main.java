@@ -1,4 +1,4 @@
-package practice_13_1.task_1;
+package practice_13.task_1;
 
 
 public class Main {

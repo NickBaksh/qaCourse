@@ -1,11 +1,11 @@
-package practice_13_1.Task_5;
+package practice_13.Task_5;
 
 import java.util.Objects;
 
-public class Product {
-    final String name;
-    final double price;
-    final String category;
+public final class Product {
+    private final String name;
+    private final double price;
+    private final String category;
 
     public Product(String name, double price, String category) {
         this.name = name;

@@ -1,4 +1,4 @@
-package practice_13_1.Task_6_1;
+package practice_13.Task_6;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

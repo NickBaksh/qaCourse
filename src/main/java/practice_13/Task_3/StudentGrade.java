@@ -1,4 +1,4 @@
-package practice_13_1.Task_3;
+package practice_13.Task_3;
 
 public class StudentGrade<T extends Number> {
     private String name;
@@ -21,5 +21,9 @@ public class StudentGrade<T extends Number> {
 
     public T getGrade() {
         return grade;
+    }
+
+    public String toString() {
+        return "Grades={name="+name+", subject="+subject+", grade="+grade+"}";
     }
 }

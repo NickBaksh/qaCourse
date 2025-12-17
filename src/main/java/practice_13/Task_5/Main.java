@@ -1,4 +1,4 @@
-package practice_13_1.Task_5;
+package practice_13.Task_5;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +13,6 @@ public class Main {
         inventoryService.addProduct(phone);
         System.out.println(inventoryService.getAll());
 
-        inventoryService.setInventoryOpen(false);
-        inventoryService.addProduct(bus);
-
         //Забираем первый продукт с категорией транспорт
         System.out.println(inventoryService.getProductByCategory("Transport"));
 
@@ -29,6 +26,18 @@ public class Main {
         System.out.println(inventoryService.getAll());
 
         //Проверка срабатывания исключения OutOfStockException
-        //System.out.println(inventoryService.getProductByCategory("Drinks"));
+        try {
+            inventoryService.getProductByCategory("Drinks");
+        } catch (OutOfStockException e) {
+            System.out.println(e.getMessage());
+        }
+
+        //Проверка исключения при попытке добавить продукт при закрытом складе
+        inventoryService.setInventoryOpen(false);
+        try {
+            inventoryService.addProduct(bus);
+        } catch (ClosedWarehousException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
