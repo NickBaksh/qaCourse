@@ -2,8 +2,8 @@ package clean.code.practice_2.task_9;
 
 public class Main {
     public static void main(String[] args) {
-        PDFGenerator pdfGenerator = new PDFGenerator();
-        PdfToDocAdapter pdfToDocAdapter = new PdfToDocAdapter(pdfGenerator);
+        PDF pdf = new PDF();
+        PdfToDocAdapter pdfToDocAdapter = new PdfToDocAdapter(pdf);
         DocsReader docsReader = new DocsReader();
 
 

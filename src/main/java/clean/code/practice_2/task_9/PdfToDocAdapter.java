@@ -1,15 +1,15 @@
 package clean.code.practice_2.task_9;
 
 public class PdfToDocAdapter implements Document {
-    private PDFGenerator pdfGenerator;
+    private PDF pdf;
 
-    public PdfToDocAdapter(PDFGenerator pdfGenerator) {
-        this.pdfGenerator = pdfGenerator;
+    public PdfToDocAdapter(PDF pdf) {
+        this.pdf = pdf;
     }
 
     @Override
     public void open() {
         System.out.println("Converting PDF to DOC.....");
-        pdfGenerator.openPDFFile();
+        pdf.openPDFFile();
     }
 }
