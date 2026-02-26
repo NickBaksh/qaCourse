@@ -2,16 +2,13 @@ package clean.code.practice_2.task_2;
 
 public class Logger {
 
-    private static Logger instance;
+    private static final Logger INSTANCE = new Logger();
 
     private Logger() {
     }
 
     public static Logger getInstance() {
-        if (instance == null) {
-            instance = new Logger();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public void event(String message) {

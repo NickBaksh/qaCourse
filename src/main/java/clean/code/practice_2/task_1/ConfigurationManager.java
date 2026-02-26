@@ -2,7 +2,7 @@ package clean.code.practice_2.task_1;
 
 public class ConfigurationManager {
 
-    private static ConfigurationManager instance;
+    private static final ConfigurationManager INSTANCE = new ConfigurationManager();
 
     private String dbUrl;
     private String dbUserName;
@@ -16,6 +16,8 @@ public class ConfigurationManager {
     private ConfigurationManager() {
         this.dbUrl = "jdbc:mysql://localhost:3306/app_db";
         this.dbUserName = "admin";
+
+        //В настоящем проекте пароль будет браться из env/secret storage
         this.dbPassword = "admin";
 
         this.filePath = "/var/app/storage";
@@ -25,10 +27,7 @@ public class ConfigurationManager {
     }
 
     public static ConfigurationManager getInstance() {
-        if (instance == null) {
-            instance = new ConfigurationManager();
-        }
-        return instance;
+        return INSTANCE;
     }
 
     public String getDbUrl() {

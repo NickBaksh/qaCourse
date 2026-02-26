@@ -1,9 +1,9 @@
 package clean.code.practice_2.task_7;
 
 public class Order {
-    private String productName;
-    private String discountType;
-    private String paymentType;
+    private final String productName;
+    private final String discountType;
+    private final String paymentType;
 
 
     public Order(Builder builder) {

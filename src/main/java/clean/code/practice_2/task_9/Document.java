@@ -1,5 +1,5 @@
 package clean.code.practice_2.task_9;
 
-public interface DOCGenerator {
+public interface Document {
     void open();
 }

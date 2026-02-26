@@ -1,11 +1,11 @@
 package clean.code.practice_2.task_8;
 
 public class Character {
-    private String characterName;
-    private int totalHealth;
-    private int damagePoints;
-    private int armor;
-    private String magicianLevel;
+    private final String characterName;
+    private final int totalHealth;
+    private final int damagePoints;
+    private final int armor;
+    private final String magicianLevel;
 
     public Character(Builder builder) {
         this.characterName = builder.characterName;
@@ -52,7 +52,7 @@ public class Character {
             return this;
         }
 
-        Character build() {
+        public Character build() {
             return new Character(this);
         }
     }

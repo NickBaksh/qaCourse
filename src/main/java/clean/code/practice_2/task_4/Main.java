@@ -2,19 +2,11 @@ package clean.code.practice_2.task_4;
 
 public class Main {
     static void main(String[] args) {
-        WeaponCreator weaponCreator;
+        WeaponCreator bowCreator = WeaponFactoryResolver.create("bow");
+        bowCreator.applyWeapon();
 
-        String weaponType = "sword";
-
-        if ("Bow".equalsIgnoreCase(weaponType)) {
-            weaponCreator = new BowCreator();
-        } else if ("Sword".equalsIgnoreCase(weaponType)) {
-            weaponCreator = new SwordCreator();
-        } else {
-            weaponCreator = new PistolCreator();
-        }
-
-        weaponCreator.applyWeapon();
+        WeaponCreator swordCreator = WeaponFactoryResolver.create("sword");
+        swordCreator.applyWeapon();
     }
 
 
