@@ -2,16 +2,17 @@ package clean.code.final_tasks.task_3;
 
 public class BookProxy implements Readable {
     private Book book;
-    private final BookBuilder bookBuilder;
+    private final BookBuilder builder;
 
-    public BookProxy(BookBuilder bookBuilder) {
-        this.bookBuilder = bookBuilder;
+
+    public BookProxy(BookBuilder builder) {
+        this.builder = builder;
     }
 
-    public void loadBook() {
+    private void loadBook() {
         if (this.book == null) {
             System.out.println("Start lazy loading...");
-            book = bookBuilder.build();
+            this.book = builder.build();
         }
     }
 
@@ -19,5 +20,9 @@ public class BookProxy implements Readable {
     public void read() {
         loadBook();
         book.read();
+    }
+
+    public boolean isLoaded() {
+        return book != null;
     }
 }

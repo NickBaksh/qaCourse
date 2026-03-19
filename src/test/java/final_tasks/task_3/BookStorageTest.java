@@ -1,8 +1,8 @@
 package final_tasks.task_3;
 
-import clean.code.final_tasks.task_3_1.BookBuilder;
-import clean.code.final_tasks.task_3_1.BookStorage;
-import clean.code.final_tasks.task_3_1.Readable;
+import clean.code.final_tasks.task_3.BookBuilder;
+import clean.code.final_tasks.task_3.BookStorage;
+import clean.code.final_tasks.task_3.Readable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,7 +1,7 @@
 package clean.code.final_tasks.task_2;
 
 public class MovVideoAdapter implements VideoAdapter {
-    MovConverter movConverter;
+    final MovConverter movConverter;
 
     public MovVideoAdapter() {
         this.movConverter = new MovConverter();

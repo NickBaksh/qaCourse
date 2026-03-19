@@ -1,7 +1,7 @@
 package clean.code.final_tasks.task_2;
 
 public class WmvVideoAdapter implements VideoAdapter {
-    WmvConverter wmvConverter;
+    final WmvConverter wmvConverter;
 
     public WmvVideoAdapter() {
         this.wmvConverter = new WmvConverter();

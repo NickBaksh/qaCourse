@@ -1,7 +1,7 @@
 package final_tasks.task_3;
 
-import clean.code.final_tasks.task_3_1.BookBuilder;
-import clean.code.final_tasks.task_3_1.BookProxy;
+import clean.code.final_tasks.task_3.BookBuilder;
+import clean.code.final_tasks.task_3.BookProxy;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

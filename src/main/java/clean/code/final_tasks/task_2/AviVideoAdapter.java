@@ -1,7 +1,7 @@
 package clean.code.final_tasks.task_2;
 
 public class AviVideoAdapter implements VideoAdapter {
-    AviConverter aviConverter;
+    final AviConverter aviConverter;
 
     public AviVideoAdapter() {
         this.aviConverter = new AviConverter();
